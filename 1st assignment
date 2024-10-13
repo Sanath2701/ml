@@ -1,0 +1,20 @@
+import pandas as pd
+df=pd.read_csv('Heart.csv')
+df
+from sklearn.model_selection import train_test_split
+train,test=train_test_split(df,random_state=0, test_size=0.25)
+train.shape
+train
+test.shape
+test
+import numpy as np
+from sklearn import metrics
+from sklearn.metrics import ConfusionMatrixDisplay
+actual=np.concatenate((np.ones(45),np.zeros(450),np.ones(5)))
+actual
+prediction=np.concatenate((np.ones(100),np.zeros(400)))
+prediction
+from sklearn.metrics import ConfusionMatrixDisplay
+ConfusionMatrixDisplay.from_predictions(actual,prediction)
+from sklearn.metrics import classification_report
+print(classification_report(actual,prediction))
